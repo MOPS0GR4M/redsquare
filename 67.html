@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedSquare Team | HUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        :root {
+            --primary: #FF3333;
+            --primary-glow: rgba(255, 51, 51, 0.5);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080808;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 51, 51, 0.1);
+        }
+
+        .red-glow {
+            box-shadow: 0 0 40px var(--primary-glow);
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 51, 51, 0.2);
+            border-color: var(--primary);
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(rgba(255, 51, 51, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 51, 51, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 51, 51, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            from { top: 0; }
+            to { top: 100%; }
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #FF3333; }
+    </style>
+</head>
+<body class="grid-bg">
+    <div class="scanline"></div>
+
+    <!-- Навигация -->
+    <nav class="fixed w-full z-50 px-6 py-4 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-[#FF3333] rotate-45 flex items-center justify-center">
+                    <span class="text-black font-black -rotate-45">RS</span>
+                </div>
+                <span class="font-black italic text-xl tracking-tighter uppercase">RED<span class="text-[#FF3333]">SQUARE</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                <a href="https://mops0gr4m.github.io/SONIC/" class="hover:text-white transition-colors">Мессенджер</a>
+                <a href="#download" class="hover:text-[#FF3333] transition-colors">Загрузки</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
+        <div class="relative mb-12">
+            <div class="absolute -inset-10 bg-[#FF3333] opacity-10 blur-[80px] rounded-full animate-pulse"></div>
+            <div class="relative w-32 h-32 md:w-48 md:h-48 bg-[#0A0A0A] border-2 border-[#FF3333] rounded-3xl flex items-center justify-center red-glow transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+                <i data-lucide="shield-alert" class="w-16 h-16 md:w-24 md:h-24 text-[#FF3333]"></i>
+            </div>
+        </div>
+        
+        <h1 class="text-6xl md:text-[8rem] font-black italic tracking-tighter text-center mb-6 uppercase leading-none">
+            REDSQUARE<br><span class="text-[#FF3333]">TEAM HUB</span>
+        </h1>
+        
+        <p class="text-gray-500 text-center max-w-lg mb-12 uppercase font-bold tracking-[0.4em] text-[10px] md:text-[11px] leading-relaxed">
+            Центральный узел управления дистрибутивами и доступом к сети Mopsogram. Выберите вашу платформу.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-7xl px-4" id="download">
+            
+            <!-- КНОПКА ВХОДА В ЧАТ (НОВАЯ) -->
+            <a href="https://mops0gr4m.github.io/SONIC/" target="_blank" 
+               class="glass p-8 rounded-3xl border-2 border-[#FF3333]/30 bg-[#FF3333]/5 transition-all btn-hover group">
+                <div class="w-12 h-12 bg-[#FF3333] rounded-xl flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(255,51,51,0.5)]">
+                    <i data-lucide="message-square" class="text-black w-6 h-6"></i>
+                </div>
+                <h3 class="font-black italic text-xl mb-1 uppercase tracking-tighter">OPEN CHAT</h3>
+                <p class="text-[8px] text-[#FF3333] font-bold uppercase tracking-widest">Запустить Mopsogram Web</p>
+            </a>
+
+            <!-- Android APK -->
+            <a href="https://drive.google.com/uc?export=download&id=1Km6IZmldfJc62gaHKfKdPFrPJyXTuTJ0" 
+               class="glass p-8 rounded-3xl border-2 border-transparent transition-all btn-hover group">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF3333]/20 transition-colors">
+                    <i data-lucide="smartphone" class="text-[#FF3333] w-6 h-6"></i>
+                </div>
+                <h3 class="font-black italic text-xl mb-1 uppercase tracking-tighter">ANDROID APK</h3>
+                <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest">Мобильный клиент v1.0</p>
+            </a>
+
+            <!-- Windows EXE -->
+            <a href="https://drive.google.com/uc?export=download&id=1Km6IZmldfJc62gaHKfKdPFrPJyXTuTJ0" 
+               class="glass p-8 rounded-3xl border-2 border-transparent transition-all btn-hover group">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF3333]/20 transition-colors">
+                    <i data-lucide="terminal" class="text-[#FF3333] w-6 h-6"></i>
+                </div>
+                <h3 class="font-black italic text-xl mb-1 uppercase tracking-tighter">WINDOWS EXE</h3>
+                <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest">Десктопная версия v1.1</p>
+            </a>
+
+            <!-- Документация -->
+            <a href="#" 
+               class="glass p-8 rounded-3xl border-2 border-transparent transition-all btn-hover group">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF3333]/20 transition-colors">
+                    <i data-lucide="book-open" class="text-[#FF3333] w-6 h-6"></i>
+                </div>
+                <h3 class="font-black italic text-xl mb-1 uppercase tracking-tighter">DOCS</h3>
+                <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest">Инструкции по установке</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="py-20 border-t border-white/5 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+            <div class="w-12 h-1 bg-[#FF3333] mb-8"></div>
+            <p class="text-[10px] font-black tracking-[0.5em] uppercase text-white mb-4">RedSquare Team • 2026</p>
+            <p class="text-[8px] text-gray-700 uppercase tracking-widest">Protocol 2.5.0 • End-to-End Encrypted</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
